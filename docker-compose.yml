@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: 
+      context: ./backend
+    container_name: backend_service
+    networks:
+      - docker_network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    driver: bridge
