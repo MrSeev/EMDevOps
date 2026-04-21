@@ -5,12 +5,6 @@ services:
     container_name: backend_service
     networks:
       - docker_network
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/"]
-      interval: 60s
-      retries: 3
-      timeout: 10s
-      start_period: 10s
     restart: on-failure
 
   nginx:

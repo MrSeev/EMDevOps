@@ -8,7 +8,7 @@
 - Перейти в терминале в директорию проекта **EMDevOps**
 `cd EMDevOps`
 - Запустить команду сборки и запуска docker compose
-`docker compose run --build`
+`docker compose up --build -d`
 
 ## Проверка работоспособности запущенного веб сервера и backend сервиса
 - В браузере перейти по адресу http://localhost
